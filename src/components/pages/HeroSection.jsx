@@ -63,6 +63,7 @@ const HeroSection = () => {
                   src={imageId}
                   alt="Food Image"
                   className="w-[300px] sm:w-[450px] mx-auto spin"
+                  fetchpriority="high"
                 />
               </motion.div>
               <motion.div
