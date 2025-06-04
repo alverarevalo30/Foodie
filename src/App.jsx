@@ -1,19 +1,14 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Navbar from "./components/pages/Navbar";
 import HeroSection from "./components/pages/HeroSection";
 import ProductsSection from "./components/pages/ProductsSection";
 import { ThemeProvider } from "./components/ThemeContext";
 import BannerSection from "./components/pages/BannerSection";
+import AppStoreSection from "./components/pages/AppStoreSection";
+import ReviewsSection from "./components/pages/ReviewsSection";
 import Footer from "./components/pages/Footer";
 
 const App = () => {
-  const ReviewsSection = React.lazy(() =>
-    import("./components/pages/ReviewsSection")
-  );
-  const AppStoreSection = React.lazy(() =>
-    import("./components/pages/AppStoreSection")
-  );
-
   return (
     <>
       <ThemeProvider>
@@ -23,16 +18,8 @@ const App = () => {
             <HeroSection />
             <ProductsSection />
             <BannerSection />
-            <Suspense
-              fallback={
-                <div className="text-center py-10 text-muted">
-                  Loading reviews...
-                </div>
-              }
-            >
-              <AppStoreSection />
-              <ReviewsSection />
-            </Suspense>
+            <AppStoreSection />
+            <ReviewsSection />
             <Footer />
           </div>
         </div>
