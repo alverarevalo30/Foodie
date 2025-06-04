@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+
+:root {
+  --background: #F5F5F5;
+  --foreground: #121212;
+
+  --color-cblack: #121212;
+  --color-cwhite: #F5F5F5;
+  --color-gray: #E9E9E9;
+  --color-red: #E63946;
+  --color-primary: #FACC15;
+  --color-secondary: #FDBA74;
+  --color-tertiary: #14B8A6;
+  --color-muted: #808080;
+  --color-purple: #C99EFD;
+  --color-orange: #F7835A;
+  --color-green: #05DF72;
+}
+
+html.dark {
+  --background: #222;
+  --foreground: #eee;
+
+  --color-cblack: #222;
+  --color-cwhite: #eee;
+  --color-gray: #333333;
+  --color-red: #FF6B6B;
+  --color-primary: #FACC15;
+  --color-secondary: #FDBA74;
+  --color-tertiary: #2DD4BF; 
+  --color-muted: #D3D3D3; 
+  --color-purple: #8469FC;
+  --color-orange: #E04006;
+  --color-green: #016630;
+}
+
+
+@layer utilities {
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  .bg-foreground {
+    background-color: var(--foreground);
+  }
+
+  .bg-background {
+    background-color: var(--background);
+  }
+
+  .bg-gray{
+    background-color: var(--color-gray);
+  }
+
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+
+  .text-foreground {
+    color: var(--foreground);
+  }
+
+  .text-background {
+    color: var(--background);
+  }
+
+  .text-muted {
+    color: var(--color-muted);
+  }
+
+  .bg-red {
+    background-color: var(--color-red);
+  }
+
+  .bg-purple {
+    background-color: var(--color-purple);
+  }
+
+  .bg-orange {
+    background-color: var(--color-orange);
+  }
+
+  .bg-green {
+    background-color: var(--color-green);
+  }
+
+  .text-red {
+    color: var(--color-red);
+  }
+
+  .hover\:text-primary {
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  .hover\:text-foreground {
+    @media (hover: hover) {
+      &:hover {
+        color: var(--foreground);
+      }
+    }
+  }
+
+   .hover\:text-background {
+    @media (hover: hover) {
+      &:hover {
+        color: var(--background);
+      }
+    }
+  }
+
+  .border-foreground {
+    border-color: var(--foreground);
+  }
+
+  .border-gray {
+    border-color: var(--color-gray);
+  }
+
+  .border-primary {
+    border-color: var(--color-primary);
+  }
+
+  .hover\:border-foreground {
+    &:hover {
+        @media (hover: hover) {
+            border-color: var(--foreground);
+        }
+    }
+  }
+  
+  .hover\:text-color-black {
+    &:hover {
+        @media (hover: hover) {
+            color: var(--color-cblack);
+        }
+    }
+  }
+
+  .group-hover\:text-color-black {
+    &:is(:where(.group):hover *) {
+        @media (hover: hover) {
+            color: var(--color-cblack) ;
+        }
+    }
+  }
+
+  .from-primary {
+    --tw-gradient-from: var(--color-primary);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent);
+  }
+
+  .to-secondary {
+    --tw-gradient-to: var(--color-secondary);
+  }
+
+  .bg-hero {
+    background-image: url('/src/assets/bg-img.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .spin {
+    animation: spin 40s linear infinite;
+  }
+
+  .bg-background\/30 {
+    background-color: color-mix(in oklab, var(--background) 30%, transparent);
+  }
+
+  .bg-foreground\/30 {
+    background-color: color-mix(in oklab, var(--foreground) 30%, transparent);
+  }
+
+  .hover\:bg-primary {
+    &:hover {
+        @media (hover: hover) {
+            background-color: var(--color-primary);
+        }
+    }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
