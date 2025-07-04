@@ -20,9 +20,10 @@ const Footer = () => {
                 <h1>FOODIE</h1>
               </div>
               <p className=" mt-3">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry.
+                Your go-to food companion. FOODIE connects you with top-rated
+                kitchens and delivers quality meals—fresh, fast, and right to
+                your door. Satisfy your cravings with convenience and flavor,
+                anytime.
               </p>
               <div className="flex items-center gap-3 mt-3">
                 <FaLocationArrow />
